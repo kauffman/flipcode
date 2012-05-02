@@ -56,7 +56,8 @@ Flipcode::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  root :to => 'games#new'
+  root :to => 'teams#new'
 
-  resource :games
+  resources :games
+  resources :teams
 end
