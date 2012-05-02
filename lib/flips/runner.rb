@@ -1,11 +1,19 @@
-require 'remove_leading_whitespace.rb'
+require ARGV[0]
 require 'pp'
 
 code = lambda do |input|
-  input.gsub(/^\s+/, '')
+  puts "foo!"
 end
 
-klass = RemoveLeadingWhitespace
+pp klass = Kernel.const_get(ARGV[0].gsub(/.*\/(.*?)\.rb/, '\1').split(/_/).collect { |str| str.capitalize }.join(''))
 flip = klass.new
-pp flip.validate_submission(code)
+
+puts "SAMPLE INPUT"
+pp flip.input
+
+puts "VALID OUTPUT"
+pp flip.valid_output
+
+
+# flip.validate_submission(code)
 
