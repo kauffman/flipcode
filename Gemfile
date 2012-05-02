@@ -25,7 +25,9 @@ end
 
 gem 'jquery-rails'
 
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
