@@ -58,6 +58,6 @@ Flipcode::Application.routes.draw do
 
   root :to => 'teams#new'
 
-  resource :games
-  resource :teams
+  resources :games
+  resources :teams
 end
