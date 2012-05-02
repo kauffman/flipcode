@@ -6,7 +6,7 @@ class Flip #< Flipcode::AbstractFlip
   end
 
   def validate_submission(code)
-    output_validator(code.call(input))
+    validate_output(code.call(input))
   end
 
   def self.desc(description)
@@ -26,6 +26,10 @@ class Flip #< Flipcode::AbstractFlip
     ws = ''
     rand(15).times { ws << chars.rand } 
     ws
+  end
+
+  def validate_output(output)
+    output == valid_output
   end
 
 end

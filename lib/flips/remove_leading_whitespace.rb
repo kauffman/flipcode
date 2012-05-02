@@ -7,8 +7,8 @@ class RemoveLeadingWhitespace < Flip
     random_whitespace + random_word + random_whitespace
   end
 
-  def output_validator(output)
-    output == input.gsub(/^\s+/, '')
+  def valid_output
+    input.gsub(/^\s+/, '')
   end
 
 end
