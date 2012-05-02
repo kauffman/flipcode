@@ -1,14 +1,14 @@
 require 'flip'
-class RemoveTrailingWhitespace < Flip
+class RemoveLeadingWhitespace < Flip
 
-  desc "Remove trailing whitespace"
+  desc "Remove leading whitespace"
     
   def input_generator
     random_whitespace + random_word + random_whitespace
   end
 
   def output_validator(output)
-    output == input.gsub(/\s+$/, '')
+    output == input.gsub(/^\s+/, '')
   end
 
 end
