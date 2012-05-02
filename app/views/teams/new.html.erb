@@ -1,0 +1,19 @@
+<h1>WHAT IS YOUR TEAM</h1>
+
+<%= form_for(Team.new, :html => { :class => 'well' }) do |f| %>
+
+  <%= label_tag 'Name' %>
+  <%= f.text_field :name %>
+
+  <%= label_tag 'Size' %>
+  <%= f.text_field :players_count %>
+
+  <br />
+
+  <button type="submit" class="btn">DO IT</button>
+
+<% end %>
+
+<% if Team.first %>
+  <h2><%= Team.first %> is waiting.</h2>
+<% end %>
