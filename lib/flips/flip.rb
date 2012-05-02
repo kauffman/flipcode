@@ -9,8 +9,14 @@ class Flip #< Flipcode::AbstractFlip
     validate_output(code.call(input))
   end
 
+  @@flips = []
   def self.desc(description)
+    @@flips << self.class
     @@description = description
+  end
+
+  def self.flips
+    @@flips
   end
 
   def desc
