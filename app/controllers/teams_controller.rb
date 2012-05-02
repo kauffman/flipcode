@@ -1,5 +1,9 @@
 class TeamsController < ApplicationController
 
+  def index
+    @teams = Team.find(:all, :order => :updated_at)
+  end
+  
   def new
   end
 
