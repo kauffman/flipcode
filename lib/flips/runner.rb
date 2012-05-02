@@ -1,11 +1,14 @@
-require 'remove_leading_whitespace.rb'
+
+require 'remove_leading_and_trailing_whitespace.rb'
 require 'pp'
 
 code = lambda do |input|
-  input.gsub(/^\s+/, '')
+  puts "foo!"
 end
 
-klass = RemoveLeadingWhitespace
+klass = RemoveLeadingAndTrailingWhitespace
 flip = klass.new
+pp flip.input
+pp flip.valid_output
 pp flip.validate_submission(code)
 
