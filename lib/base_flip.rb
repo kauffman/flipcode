@@ -9,8 +9,8 @@ class BaseFlip
       eval code
     end
     l.call(input)
-  rescue Exception, RuntimeError
-    false
+  rescue Exception, RuntimeError => e
+    "ERROR: #{e.class} #{e.message}"
   end
 
   def validate_submission(code)
