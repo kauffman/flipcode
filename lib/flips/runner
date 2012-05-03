@@ -3,24 +3,32 @@ require 'faker'
 require ARGV[0]
 require 'pp'
 
-user_input = "input.strip"
+user_code = "input.strip"
 
-code = lambda do |input|
-  eval user_input
-end
+#def my_code |input|
+#
+#  [ TEXT AREA HERE ]
+#
+#end
+
 
 pp klass = Kernel.const_get(ARGV[0].gsub(/(.*\/)?(.*?)\.rb/, '\2').split(/_/).collect { |str| str.capitalize }.join(''))
 flip = klass.new
 
+puts "\n--------------------"
 puts "DESCRIPTION"
-pp flip.desc
+pp flip.description
 
+puts "\n--------------------"
 puts "SAMPLE INPUT"
 pp flip.input
 
+puts "\n--------------------"
 puts "VALID OUTPUT"
 pp flip.valid_output
 
-
-# flip.validate_submission(code)
+puts "\n--------------------"
+puts "DOES IT VALIDATE?"
+pp flip.validate_submission(user_code)
+puts
 
