@@ -19,7 +19,9 @@ class Game < ActiveRecord::Base
   end
 
   def set_up_flips
+    pp "ADAMDEBUG: set_up_flips", teams.first.players_count, BaseFlip.flips.shuffle.first(teams.first.players_count)
     BaseFlip.flips.shuffle.first(teams.first.players_count).each do |flip|
+      pp "ADAMDEBUG: CREATE FLIP! #{flip.to_s}"
       flips.create(:name => flip.to_s)
     end
   end

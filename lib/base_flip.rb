@@ -9,13 +9,13 @@ class BaseFlip
       eval code
     end
     l.call(input)
-  rescue Exception
+  rescue Exception, RuntimeError
     false
   end
 
   def validate_submission(code)
     validate_output(run_user_code(code))
-  rescue Exception
+  rescue Exception, RuntimeError
     false
   end
 

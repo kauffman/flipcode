@@ -34,16 +34,14 @@ class Team < ActiveRecord::Base
   end
 
   def set_up_game
-    if @future_opponent
-      update_attributes(:players_count => @future_opponent.players_count)
-      new_game = Game.create
-      @future_opponent.game = new_game
-      @future_opponent.save
-      self.game = new_game
-      new_game.set_up_flips
-    else
-      self.game = Game.open
-    end
+    return unless @future_opponent
+    pp "ADAMDEBUG: SET UP GAME"
+    update_attributes(:players_count => @future_opponent.players_count)
+    new_game = Game.create
+    @future_opponent.game = new_game
+    @future_opponent.save
+    self.game = new_game
+    new_game.set_up_flips
     save
   end
 

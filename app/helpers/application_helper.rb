@@ -9,7 +9,11 @@ module ApplicationHelper
   end
   
   def display_output(output)
-    output.is_a?(String) ? output : output.pretty_print_inspect
+    if output.is_a?(String) || output.nil?
+      output
+    else
+      output.pretty_print_inspect
+    end
   end
   
 end
