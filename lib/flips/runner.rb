@@ -5,7 +5,7 @@ code = lambda do |input|
   puts "foo!"
 end
 
-pp klass = Kernel.const_get(ARGV[0].gsub(/.*\/(.*?)\.rb/, '\1').split(/_/).collect { |str| str.capitalize }.join(''))
+pp klass = Kernel.const_get(ARGV[0].gsub(/(.*\/)?(.*?)\.rb/, '\2').split(/_/).collect { |str| str.capitalize }.join(''))
 flip = klass.new
 
 puts "SAMPLE INPUT"

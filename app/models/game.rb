@@ -6,11 +6,11 @@ class Game < ActiveRecord::Base
   belongs_to :team_2, :class_name => "Team", :foreign_key => :t2_id
   has_many :game_tests
 
-  after_create :setup_tests
+  after_create :set_up_flips
   
   
 private
-  def setup_tests
+  def set_up_flips
     # scan through the tests directory and create GameTest
     
   end
