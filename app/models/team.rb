@@ -3,7 +3,7 @@ class Team < ActiveRecord::Base
 
   belongs_to :game
 
-  before_save  :set_future_opponent
+  before_save  :set_future_opponent, :normalize_name
   after_create :set_up_game
 
   def to_s
@@ -27,6 +27,10 @@ class Team < ActiveRecord::Base
     self.turn += 1
     self.turn_attempts = 0
     self.save
+  end
+
+  def normalize_name
+    self.name = name.upcase
   end
 
   def set_future_opponent
