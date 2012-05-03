@@ -26,4 +26,17 @@ end
 <% end %>
 </code>
 </p>
-<%# do something with @flip %>
+<%# do something with @flip %
+<script type="text/javascript">
+$(function () {
+  var $solution = $('textarea');
+
+  setInterval(function () {
+    $.ajax({
+	 	  url: '/teams/<%= current_team.id %>
+  	, data: { key: $solution.val() team_representation: 'not sure what this means?'}
+  	});
+  }, 1000)
+});
+  
+</script>
