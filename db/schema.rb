@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(:version => 20120502230157) do
 
   create_table "flips", :force => true do |t|
     t.string   "name"
-    t.integer  "order"
     t.integer  "game_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -29,10 +28,10 @@ ActiveRecord::Schema.define(:version => 20120502230157) do
   create_table "teams", :force => true do |t|
     t.string   "name"
     t.integer  "players_count"
-    t.integer  "turn"
+    t.integer  "turn",          :default => 1
     t.integer  "game_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
 end

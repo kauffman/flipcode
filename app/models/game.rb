@@ -1,19 +1,18 @@
 class Game < ActiveRecord::Base
 
-  has_many :games
+  has_many :teams
   has_many :flips
-
-  after_create :set_up_flips
 
   def self.open
     find_by_status(:open)
   end
-  
-  
-private
+
+  def flip_for(turn)
+    flips[turn - 1]
+  end
 
   def set_up_flips
-    BaseFlip.flips.shuffle.first(player_count).each do |flip|
+    BaseFlip.flips.shuffle.first(teams.first.players_count).each do |flip|
       flips.create(:name => flip.to_s)
     end
   end

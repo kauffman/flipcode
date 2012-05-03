@@ -14,7 +14,10 @@ class Team < ActiveRecord::Base
     game.teams.select {|t| t != self }.first if game
   end
 
-
+  def increment_turn
+    self.turn += 1
+    self.save
+  end
 
   def set_future_opponent
     @future_opponent = Team.waiting
@@ -23,8 +26,12 @@ class Team < ActiveRecord::Base
   def set_up_game
     if @future_opponent
       update_attributes(:players_count => @future_opponent.players_count)
-      @future_opponent.game = self.create_game
+      new_game = Game.create
+      @future_opponent.game = new_game
       @future_opponent.save
+      self.game = new_game
+      save
+      new_game.set_up_flips
     end
   end
 
