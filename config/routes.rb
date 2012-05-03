@@ -60,6 +60,10 @@ Flipcode::Application.routes.draw do
 
   resource  :game
   resources :teams
-  resources :flips
+  resources :flips do 
+    member do
+      put "solve"
+    end
+  end
 
 end

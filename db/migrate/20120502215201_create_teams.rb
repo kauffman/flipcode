@@ -4,6 +4,7 @@ class CreateTeams < ActiveRecord::Migration
       t.string :name
       t.integer :players_count
       t.integer :turn, :default => 1
+      t.integer :turn_attempts, :default => 0
       t.references :game
       t.timestamps
     end

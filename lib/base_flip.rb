@@ -12,6 +12,8 @@ class BaseFlip
 
   def validate_submission(code)
     validate_output(run_user_code(code))
+  rescue
+    false
   end
 
   @@flips = []

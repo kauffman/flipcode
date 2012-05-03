@@ -3,13 +3,26 @@
 <p>
   Name: <%= @flip.class %>
   Description: <%= @flip.description %> </br>
-  Sample Input: <%= @flip.input %> </br>
+  Sample Input: <%= @flip.input.pretty_print_inspect %> </br>
   Sample Output: <%= @flip.valid_output %> </br>
 </p>
 
-<%= form_for @flip do |f| %>
-  <%= text_area_tag :solution, '', :rows => 10, :cols => 150 %></br>
-  <%= submit_tag %>
+<br/>
+<p>
+  <% if current_team.turn_attempts > 0 %>
+    <h2>
+      FAIL! <br/>
+      Attempts: <%= current_team.turn_attempts %>
+    </h2>
+  <% end %>
+<code>
+def solve(input)<br/>
+<%= form_for(@flip, :url => solve_flip_url)  do |f| %>
+  <%= text_area_tag :solution, params[:solution], :size => "200x10" %></br>
+end                                                            
+</br></br>
+  <%= submit_tag 'Run my stupid code' %>
 <% end %>
-
+</code>
+</p>
 <%# do something with @flip %>

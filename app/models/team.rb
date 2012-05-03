@@ -18,8 +18,14 @@ class Team < ActiveRecord::Base
     game.flip_for(turn)
   end
 
+  def increment_turn_attempts
+    self.turn_attempts += 1
+    self.save
+  end
+  
   def increment_turn
     self.turn += 1
+    self.turn_attempts = 0
     self.save
   end
 
