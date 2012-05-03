@@ -1,6 +1,4 @@
-require 'flip'
-require 'pp'
-class MaxValueDivisibleBy3 < Flip
+class MaxValueDivisibleBy3 < BaseFlip
 
   desc 'Given a list of integers, return the single highest value divisible by 3. If nothing is divisible by 3, return 0 (zero).'
     

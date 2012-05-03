@@ -1,5 +1,4 @@
-require 'flip'
-class RemoveTrailingWhitespace < Flip
+class RemoveTrailingWhitespace < BaseFlip
 
   desc "Remove trailing whitespace"
     

@@ -16,8 +16,7 @@ class Game < ActiveRecord::Base
   
 private
   def set_up_flips
-    # scan through the tests directory and create GameTest
-    
+    #Flip.flips.shuffle.first(x)
   end
   
   
