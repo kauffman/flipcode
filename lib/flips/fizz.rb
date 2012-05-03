@@ -1,6 +1,6 @@
 class Fizz < BaseFlip
 
-  desc 'Concatenate the numbers from 1 through 25 with ":" as a dilemeter, except when the number is a multiple of the integer your code is passed. If it is a multiple, use "fizz" instead of the number.'
+  desc 'Concatenate the numbers from 1 through 25 with ":" as a delimiter, except when the number is a multiple of the integer your code is passed. If it is a multiple, use "fizz" instead of the number.'
     
   def input_generator
     rand(6).to_i + 1
