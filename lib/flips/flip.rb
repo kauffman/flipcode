@@ -1,5 +1,3 @@
-require 'faker'
-
 class Flip #< Flipcode::AbstractFlip
   def input
     @input ||= input_generator
