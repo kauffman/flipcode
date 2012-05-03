@@ -4,7 +4,8 @@ class BaseFlip
   end
 
   def run_user_code(code)
-    l = lambda do |input|
+    l = lambda do |input_orig|
+      input = Marshal.load(Marshal.dump(input_orig))
       eval code
     end
     l.call(input)
