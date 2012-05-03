@@ -4,7 +4,7 @@
 
 <% if @game %>
   <div class="page-header">
-    <h1>FLIPCODE IN PROGRESS</h1>
+    <h1>GAME ON</h1>
   </div>
   <div class="row">
     <% @game.teams.each do |team| %>
@@ -25,6 +25,19 @@
         <div class="shrinker">
           <h2>CHALLENGE</h2>
           <h3><%= team.flip %></h3>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="span12">&nbsp;</div>
+  </div>
+  <div class="row">
+    <% @game.teams.each do |team| %>
+      <div class="span6 scoreboard-box">
+        <div class="shrinker">
+          <h2>CODE</h2>
+          <textarea>Code goes here</textarea>
         </div>
       </div>
     <% end %>
