@@ -7,17 +7,13 @@ class Game < ActiveRecord::Base
   has_many :flips
 
   after_create :set_up_flips
-  
-  
+
   def self.open
     find_by_status(:open)
   end
-  
-  
-private
+
   def set_up_flips
     #Flip.flips.shuffle.first(x)
   end
-  
-  
+
 end
