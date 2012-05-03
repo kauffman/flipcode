@@ -1,3 +1,15 @@
 <h1>SOLVE THIS FUCKING PROBLEM</h1>
 
+<p>
+  Name: <%= @flip.class %>
+  Description: <%= @flip.description %> </br>
+  Sample Input: <%= @flip.input %> </br>
+  Sample Output: <%= @flip.valid_output %> </br>
+</p>
+
+<%= form_for @flip do |f| %>
+  <%= text_area_tag :solution, '', :rows => 10, :cols => 150 %></br>
+  <%= submit_tag %>
+<% end %>
+
 <%# do something with @flip %>
