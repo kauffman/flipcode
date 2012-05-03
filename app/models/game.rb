@@ -5,7 +5,7 @@ class Game < ActiveRecord::Base
   has_many :flips
 
   def self.open
-    find_by_status(:open)
+    find(:first, :conditions => {:status => :open}, :order => "updated_at desc")
   end
 
   def flip_for(turn)
