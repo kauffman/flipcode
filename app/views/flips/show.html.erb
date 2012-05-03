@@ -3,8 +3,8 @@
 <p>
   Name: <%= @flip.class %>
   Description: <%= @flip.description %> </br>
-  Sample Input: <%= @flip.input.pretty_print_inspect %> </br>
-  Sample Output: <%= @flip.valid_output %> </br>
+  Sample Input: <code><%= display_output(@flip.input) %></code> </br>
+  Sample Output: <code><%= @flip.valid_output %> </code></br>
 </p>
 
 <br/>
@@ -12,7 +12,8 @@
   <% if current_team.turn_attempts > 0 %>
     <h2>
       FAIL! <br/>
-      Attempts: <%= current_team.turn_attempts %>
+      Attempts: <%= current_team.turn_attempts %></br>
+      Output: <code><%= display_output(@flip.run_user_code(params[:solution]))%></code>
     </h2>
   <% end %>
 <code>

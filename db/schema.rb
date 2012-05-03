@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(:version => 20120502230157) do
   end
 
   create_table "games", :force => true do |t|
-    t.string   "status",     :default => "open"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.string   "status",          :default => "open"
+    t.integer  "winning_team_id"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
   end
 
   create_table "teams", :force => true do |t|

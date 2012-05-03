@@ -8,11 +8,13 @@ class BaseFlip
       eval code
     end
     l.call(input)
+  rescue Exception
+    false
   end
 
   def validate_submission(code)
     validate_output(run_user_code(code))
-  rescue
+  rescue Exception
     false
   end
 
