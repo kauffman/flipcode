@@ -6,7 +6,11 @@
   <%= f.text_field :name %>
 
   <%= label_tag 'Size' %>
-  <%= f.text_field :players_count %>
+  <% if Team.waiting %>
+    <p><%= Team.waiting.players_count %></p>
+  <% else %>
+    <%= f.text_field :players_count %>
+  <% end %>
 
   <br />
 
@@ -14,6 +18,6 @@
 
 <% end %>
 
-<% if Team.first %>
-  <h2><%= Team.first %> is waiting.</h2>
+<% if Team.waiting %>
+  <h2><%= Team.waiting %> is waiting.</h2>
 <% end %>
