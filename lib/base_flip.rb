@@ -4,7 +4,11 @@ class BaseFlip
   end
 
   def validate_submission(code)
-    validate_output(code.call(input))
+    l = lambda do |input|
+      eval code
+    end
+
+    validate_output(l.call(input))
   end
 
   @@flips = []
