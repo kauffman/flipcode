@@ -1,23 +1,24 @@
-<h1><%= @team %></h1>
+<h1><%= current_team %></h1>
 
 <% content_for :refresh_tag do %> 
-  <meta http-equiv="refresh" content="<%= @team.game ? '10' : '5' %>"/>
+  <meta http-equiv="refresh" content="20"/>
 <% end %>
 
-<% if @team.game %>
+<% if current_team.game %>
   <% if current_game.winning_team %>
     <% if current_game.winning_team == current_team %>
       <h1>YOU WIN!</h1>
     <% else %>
       <h1>YOU LOSE!</h1>
     <% end %>
+    <%= link_to "START OVER!", new_team_path %>
   <% else %>
-    <% if @team.turn > 1 %>
+    <% if current_team.turn > 1 %>
       <h1>CORRECT!</h1>
     <% end %>
-    <h2>FIGHTING AGAINST <%= @team.opponent %></h2>
-    <p>Player <%= @team.turn %> is up.</p>
-    <p>DRINK AND THEN <%= link_to 'FUCKING CLICK HERE', flip_path(@team.flip) %>.</p>
+    <h2>FIGHTING AGAINST <%= current_team.opponent %></h2>
+    <p>Player <%= current_team.turn %> is up.</p>
+    <p>DRINK AND THEN <%= link_to 'FUCKING CLICK HERE', flip_path(current_team.flip) %>.</p>
   <% end %>
 <% else %>
   <h2>Waiting for an opponent...</h2>
