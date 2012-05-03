@@ -7,7 +7,7 @@ class RemoveTrailingWhitespace < BaseFlip
   end
 
   def valid_output
-    input.gsub(/\s+$/, '')
+    input.rstrip
   end
 
 end

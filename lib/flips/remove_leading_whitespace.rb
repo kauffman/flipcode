@@ -7,7 +7,7 @@ class RemoveLeadingWhitespace < BaseFlip
   end
 
   def valid_output
-    input.gsub(/^\s+/, '')
+    input.lstrip
   end
 
 end
