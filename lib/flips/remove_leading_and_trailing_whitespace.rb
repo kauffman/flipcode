@@ -1,4 +1,3 @@
-require 'flip'
 class RemoveLeadingAndTrailingWhitespace < Flip
 
   desc "Remove leading and trailing whitespace"

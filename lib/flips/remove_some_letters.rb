@@ -1,4 +1,3 @@
-require 'flip'
 class RemoveSomeLetters < Flip
 
   desc 'Remove the letters g-t (both uppercase and lowercase) from the given string.'

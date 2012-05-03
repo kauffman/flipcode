@@ -1,5 +1,3 @@
-require 'flip'
-require 'pp'
 class MaxValueDivisibleBy3 < Flip
 
   desc 'Given a list of integers, return the single highest value divisible by 3. If nothing is divisible by 3, return 0 (zero).'

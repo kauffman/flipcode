@@ -1,4 +1,3 @@
-require 'flip'
 class MaxValue < Flip
 
   desc 'Given a list of integers, return the single highest value.'
