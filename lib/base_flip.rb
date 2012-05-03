@@ -32,7 +32,7 @@ class BaseFlip
   def random_whitespace
     chars = [ " ", "\t", "\n" ] 
     ws = ''
-    rand(15).times { ws << chars.rand } 
+    rand(15).times { ws << chars.sample } 
     ws
   end
 

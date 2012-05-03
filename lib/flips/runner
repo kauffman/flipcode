@@ -3,8 +3,10 @@ require 'faker'
 require ARGV[0]
 require 'pp'
 
+user_input = "input.strip"
+
 code = lambda do |input|
-  puts "foo!"
+  eval user_input
 end
 
 pp klass = Kernel.const_get(ARGV[0].gsub(/(.*\/)?(.*?)\.rb/, '\2').split(/_/).collect { |str| str.capitalize }.join(''))
