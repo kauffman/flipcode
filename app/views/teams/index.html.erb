@@ -1,0 +1,13 @@
+<h1>Team List</h1>
+
+<ul> 
+<% @teams.each do |team |%>
+  <%= form_for Game.new do |f| %>
+    <li>
+      <%= team.id %> <%=team.name%> Players: <%= team.players_count %> 
+      <%= hidden_field :t2_id, team.id %>
+      <%= f.submit 'Play!' %>
+     </li>
+  <% end %>
+<% end %>
+</ul>

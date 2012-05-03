@@ -17,7 +17,7 @@ class TeamsController < ApplicationController
       session[:team_id] = @team.id
     end
     flash[:notice] = "YES."
-    redirect_to @team
+    redirect_to teams_url
   end
 
 end
