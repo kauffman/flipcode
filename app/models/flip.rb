@@ -5,6 +5,10 @@ class Flip < ActiveRecord::Base
   %w{input valid_output description run_user_code}.each do |meth|
     delegate meth, :to => :flip_task
   end
+
+  def to_s
+    description
+  end
   
   def solve(code)
     flip_task.validate_submission(code)
