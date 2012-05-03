@@ -1,6 +1,6 @@
 class RemoveTrailingWhitespace < BaseFlip
 
-  desc "Remove trailing whitespace"
+  desc "Remove trailing whitespace."
     
   def input_generator
     random_whitespace + random_word + random_whitespace

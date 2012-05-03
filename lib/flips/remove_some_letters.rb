@@ -1,6 +1,6 @@
 class RemoveSomeLetters < BaseFlip
 
-  desc 'Remove the letters g-t (both uppercase and lowercase) from the given string.'
+  desc 'Remove the letters g through t (both uppercase and lowercase) from the given string.'
     
   def input_generator
     Faker::Lorem.sentence
