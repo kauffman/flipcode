@@ -40,9 +40,11 @@ class Team < ActiveRecord::Base
       @future_opponent.game = new_game
       @future_opponent.save
       self.game = new_game
-      save
       new_game.set_up_flips
+    else
+      self.game = Game.open
     end
+    save
   end
 
   def self.waiting
