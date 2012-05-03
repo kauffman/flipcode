@@ -9,6 +9,6 @@ class FlipsController < ApplicationController
   end
 
   def find_flip
-    Flip.find(params[:id])
+    @flip = Flip.find(params[:id])
   end
 end

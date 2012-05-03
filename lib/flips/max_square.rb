@@ -8,7 +8,7 @@ class MaxSquare < BaseFlip
       input << rand(1500)
     end
     2.times do
-      input << (5..38).to_a.rand ** 2
+      input << (5..38).to_a.sample ** 2
     end
     return input
   end

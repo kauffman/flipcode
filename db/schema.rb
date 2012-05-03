@@ -10,28 +10,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120502230157) do
+ActiveRecord::Schema.define(:version => 20120502234511) do
 
-  create_table "flips", :force => true do |t|
-    t.string   "name"
-    t.integer  "game_id"
+  create_table "game_tests", :force => true do |t|
+    t.string   "test_class"
+    t.integer  "order"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "game_id"
   end
 
   create_table "games", :force => true do |t|
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "t1_id"
+    t.integer  "t2_id"
+    t.integer  "t1_pos",     :default => 0
+    t.integer  "t2_pos",     :default => 0
     t.string   "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "teams", :force => true do |t|
     t.string   "name"
     t.integer  "players_count"
-    t.integer  "turn",          :default => 1
-    t.integer  "game_id"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
+
+  add_index "teams", ["name"], :name => "index_teams_on_name", :unique => true
 
 end
