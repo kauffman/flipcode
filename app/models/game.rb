@@ -7,14 +7,11 @@ class Game < ActiveRecord::Base
   has_many :flips
 
   after_create :set_up_flips
-<<<<<<< HEAD
   
   
   def self.open
     find_by_status(:open)
   end
-=======
->>>>>>> 06ac45e5a1639d42801dac7defb4080d8b726940
   
   
 private
