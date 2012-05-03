@@ -1,5 +1,11 @@
 <h1>FLIPCODE FUCKERS</h1>
 
-Team 1: <%= @game.team_1 %> <br />
-Team 2: <%= @game.team_2 %>
-
+<% if @game %>
+  Team 1: <%= @game.team_1 %> Pos: <% @game.t1_pos %><br />
+  Team 2: <%= @game.team_2 %> Pos: <% @game.t2_pos %>
+<% else %>
+ No game started.  YET!!!
+ <% content_for :refresh_tag do %> 
+  <meta http-equiv="refresh" content="2"/>
+ <% end %>
+<% end %>
