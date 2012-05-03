@@ -1,3 +1,5 @@
+require '../base_flip.rb'
+require 'faker'
 require ARGV[0]
 require 'pp'
 
