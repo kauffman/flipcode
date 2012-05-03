@@ -35,7 +35,6 @@ class Team < ActiveRecord::Base
 
   def set_up_game
     return unless @future_opponent
-    pp "ADAMDEBUG: SET UP GAME"
     update_attributes(:players_count => @future_opponent.players_count)
     new_game = Game.create
     @future_opponent.game = new_game

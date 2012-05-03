@@ -20,7 +20,6 @@ class FlipsController < ApplicationController
   end
 
   def find_flip
-    pp "ADAMDEBUG: ", current_team, current_team.flip
     @flip = Flip.find(current_team.flip)
   end
 end
