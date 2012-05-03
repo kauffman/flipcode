@@ -7,10 +7,11 @@ class Flip < ActiveRecord::Base
   end
   
   def solve(code)
+    flip_task.validate_submission(code)
   end
   
   def flip_task
-    @flip_task ||= name.constantize.new    
+    @flip_task ||= name.constantize.new
   end
   
 end

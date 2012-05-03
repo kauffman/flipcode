@@ -9,6 +9,8 @@ class BaseFlip
     end
 
     validate_output(l.call(input))
+  rescue
+    false
   end
 
   @@flips = []
