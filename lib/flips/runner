@@ -9,11 +9,20 @@ code = lambda do |input|
   eval user_input
 end
 
+
+
+#def my_code |input|
+#
+#  [ TEXT AREA HERE ]
+#
+#end
+
+
 pp klass = Kernel.const_get(ARGV[0].gsub(/(.*\/)?(.*?)\.rb/, '\2').split(/_/).collect { |str| str.capitalize }.join(''))
 flip = klass.new
 
 puts "DESCRIPTION"
-pp flip.desc
+pp flip.description
 
 puts "SAMPLE INPUT"
 pp flip.input
