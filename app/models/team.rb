@@ -14,6 +14,8 @@ class Team < ActiveRecord::Base
     game.teams.select {|t| t != self }.first if game
   end
 
+
+
   def set_future_opponent
     @future_opponent = Team.waiting
   end
