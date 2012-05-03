@@ -15,9 +15,10 @@ class Game < ActiveRecord::Base
   
   
 private
+
   def set_up_flips
-    #Flip.flips.shuffle.first(x)
+    Flip.flips.shuffle.first(player_count).each do |flip|
+      flips.create(:name => flip.to_s)
+    end
   end
-  
-  
 end
