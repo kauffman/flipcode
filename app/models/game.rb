@@ -1,6 +1,6 @@
 class Game < ActiveRecord::Base
 
-  has_many :teams
+  has_many :teams, :order => 'created_at'
   has_many :flips
 
   def self.open
