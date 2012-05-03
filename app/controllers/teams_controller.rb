@@ -7,6 +7,7 @@ class TeamsController < ApplicationController
     # Should technically be params and not session, but you
     # can only really look at your own team anyway.
     @team = Team.find(session[:team_id])
+    @game = Game.open
   end
 
   def create

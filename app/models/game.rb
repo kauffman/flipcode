@@ -7,8 +7,7 @@ class Game < ActiveRecord::Base
   has_many :flips
 
   after_create :set_up_flips
-  
-  
+
   def self.open
     find_by_status(:open)
   end
