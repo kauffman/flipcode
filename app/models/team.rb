@@ -14,6 +14,10 @@ class Team < ActiveRecord::Base
     game.teams.select {|t| t != self }.first if game
   end
 
+  def flip
+    game.flip_for(turn)
+  end
+
   def increment_turn
     self.turn += 1
     self.save

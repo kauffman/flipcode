@@ -7,6 +7,7 @@
 <% if @team.game %>
   <h2>FIGHTING AGAINST <%= @team.opponent %></h2>
   <p>Player <%= @team.turn %> is up.</p>
+  <p>DRINK AND THEN <%= link_to 'FUCKING CLICK HERE', @team.flip %>.</p>
 <% else %>
   <h2>Waiting for an opponent...</h2>
 <% end %>
