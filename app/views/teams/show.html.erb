@@ -17,8 +17,9 @@
       <h1>CORRECT!</h1>
     <% end %>
     <h2>FIGHTING AGAINST <%= current_team.opponent %></h2>
-    <p>Player <%= current_team.turn %> is up.</p>
-    <p>DRINK AND THEN <%= link_to 'FUCKING CLICK HERE', flip_path(current_team.flip) %>.</p>
+    <h4>PLAYER <%= current_team.turn %> IS UP</h4>
+    <h4>FIRST YOU DRINK</h4>
+    <h4><%= link_to 'THEN YOU FUCKING CLICK HERE', flip_path(current_team.flip), :class => 'btn btn-primary' %></h4>
   <% end %>
 <% else %>
   <h2>Waiting for an opponent...</h2>

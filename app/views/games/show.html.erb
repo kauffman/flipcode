@@ -36,6 +36,19 @@
     <% @game.teams.each do |team| %>
       <div class="span6 scoreboard-box">
         <div class="shrinker">
+          <h2>CODE</h2>
+          <textarea>Code goes here</textarea>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="span12">&nbsp;</div>
+  </div>
+  <div class="row">
+    <% @game.teams.each do |team| %>
+      <div class="span6 scoreboard-box">
+        <div class="shrinker">
          <h2>ATTEMPT</h2>
          <h3><%= team.turn_attempts %></h3>
         </div>
