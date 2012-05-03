@@ -8,6 +8,10 @@ class FlipsController < ApplicationController
   def solve
     if @flip.solve(params[:solution])
       current_team.increment_turn
+      if current_team.turn > current_team.players_count
+        #game over
+        current_game.set_winner(current_team) unless current_game.winning_team
+      end
       redirect_to(current_team)
     else
       current_team.increment_turn_attempts

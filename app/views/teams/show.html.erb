@@ -5,9 +5,20 @@
 <% end %>
 
 <% if @team.game %>
-  <h2>FIGHTING AGAINST <%= @team.opponent %></h2>
-  <p>Player <%= @team.turn %> is up.</p>
-  <p>DRINK AND THEN <%= link_to 'FUCKING CLICK HERE', @team.flip %>.</p>
+  <% if current_game.winning_team %>
+    <% if current_game.winning_team == current_team %>
+      <h1>YOU WIN!</h1>
+    <% else %>
+      <h1>YOU LOSE!</h1>
+    <% end %>
+  <% else %>
+    <% if @team.turn > 1 %>
+      <h1>CORRECT!</h1>
+    <% end %>
+    <h2>FIGHTING AGAINST <%= @team.opponent %></h2>
+    <p>Player <%= @team.turn %> is up.</p>
+    <p>DRINK AND THEN <%= link_to 'FUCKING CLICK HERE', flip_path(@team.flip) %>.</p>
+  <% end %>
 <% else %>
   <h2>Waiting for an opponent...</h2>
 <% end %>
