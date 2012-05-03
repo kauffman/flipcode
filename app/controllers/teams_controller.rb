@@ -1,14 +1,12 @@
 class TeamsController < ApplicationController
-
-  def index
-    @teams = Team.find(:all, :order => :updated_at)
-  end
   
   def new
   end
 
   def show
-    render :text => "balls"
+    # Should technically be params and not session, but you
+    # can only really look at your own team anyway.
+    @team = Team.find(session[:team_id])
   end
 
   def create
@@ -17,7 +15,7 @@ class TeamsController < ApplicationController
       session[:team_id] = @team.id
     end
     flash[:notice] = "YES."
-    redirect_to teams_url
+    redirect_to @team
   end
 
 end
