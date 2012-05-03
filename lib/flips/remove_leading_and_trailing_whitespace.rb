@@ -1,4 +1,4 @@
-class RemoveLeadingAndTrailingWhitespace < Flip
+class RemoveLeadingAndTrailingWhitespace < BaseFlip
 
   desc "Remove leading and trailing whitespace"
     

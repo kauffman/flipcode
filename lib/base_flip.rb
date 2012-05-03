@@ -1,4 +1,4 @@
-class Flip #< Flipcode::AbstractFlip
+class BaseFlip
   def input
     @input ||= input_generator
   end
@@ -9,7 +9,7 @@ class Flip #< Flipcode::AbstractFlip
 
   @@flips = []
   def self.desc(description)
-    Flip.register_flip(self)
+    BaseFlip.register_flip(self)
     @@description = description
   end
 

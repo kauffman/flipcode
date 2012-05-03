@@ -1,4 +1,4 @@
-class SortedChars < Flip
+class SortedChars < BaseFlip
 
   desc 'Sort the characters in a string into a new string. Standard ASCII sort.'
     

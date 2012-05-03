@@ -1,4 +1,4 @@
-class MaxValue < Flip
+class MaxValue < BaseFlip
 
   desc 'Given a list of integers, return the single highest value.'
     
