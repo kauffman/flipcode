@@ -12,6 +12,9 @@ end
 pp klass = Kernel.const_get(ARGV[0].gsub(/(.*\/)?(.*?)\.rb/, '\2').split(/_/).collect { |str| str.capitalize }.join(''))
 flip = klass.new
 
+puts "DESCRIPTION"
+pp flip.desc
+
 puts "SAMPLE INPUT"
 pp flip.input
 

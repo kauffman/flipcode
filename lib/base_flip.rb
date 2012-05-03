@@ -10,7 +10,7 @@ class BaseFlip
   @@flips = []
   def self.desc(description)
     BaseFlip.register_flip(self)
-    @@description = description
+    @description = description
   end
 
   def self.register_flip(klass)
@@ -21,8 +21,12 @@ class BaseFlip
     @@flips
   end
 
-  def desc
-    @@description
+  def self.description
+    @description
+  end
+
+  def description
+    self.class.description
   end
 
   def random_word
