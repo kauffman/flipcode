@@ -1,7 +1,12 @@
 <h1><%= @team %></h1>
 
 <% content_for :refresh_tag do %> 
- <meta http-equiv="refresh" content="5"/>
+  <meta http-equiv="refresh" content="<%= @team.game ? '10' : '5' %>"/>
 <% end %>
 
-
+<% if @team.game %>
+  <h2>FIGHTING AGAINST <%= @team.opponent %></h2>
+  <p>Player <%= @team.turn %> is up.</p>
+<% else %>
+  <h2>Waiting for an opponent...</h2>
+<% end %>
