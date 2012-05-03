@@ -3,12 +3,15 @@ class BaseFlip
     @input ||= input_generator
   end
 
-  def validate_submission(code)
+  def run_user_code(code)
     l = lambda do |input|
       eval code
     end
+    l.call(input)
+  end
 
-    validate_output(l.call(input))
+  def validate_submission(code)
+    validate_output(run_user_code(code))
   end
 
   @@flips = []
