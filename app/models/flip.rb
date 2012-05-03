@@ -10,7 +10,7 @@ class Flip < ActiveRecord::Base
   end
   
   def flip_task
-    @flip_task = name.constantize.new    
+    @flip_task ||= name.constantize.new    
   end
   
 end
